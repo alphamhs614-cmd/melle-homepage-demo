@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[Ihr Firmenname] – Moderne Homepage (Demo-Entwurf)</title>
+<meta name="description" content="Unverbindlicher Demo-Entwurf einer modernen, responsiven Homepage für kleine Unternehmen.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f3d3e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f3d3e'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23f4b860' font-family='Arial' font-weight='700'%3EF%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#10201f;--muted:#5b6b6a;--bg:#f7f5f0;--card:#fff;--brand:#0f3d3e;--brand2:#14595b;--acc:#f4b860;--line:#e6e1d6;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}img,svg{display:block;max-width:100%}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+.ph{background:rgba(244,184,96,.22);border-radius:4px;padding:0 .2em}
+/* demo bar */
+.demobar{background:var(--acc);color:#3b2a0b;font-size:13px;text-align:center;padding:7px 12px;font-weight:600}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.88);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.sc{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-.02em}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--brand);color:var(--acc);display:grid;place-items:center;font-style:normal;font-size:16px}
+.links{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500}
+.links a{text-decoration:none;opacity:.8}.links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{background:var(--brand2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.sm{padding:10px 18px;font-size:14px}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;transition:.2s}
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--brand2);background:#e4efe9;padding:6px 12px;border-radius:999px}
+h1{font-size:clamp(36px,5.2vw,64px);line-height:1.05;letter-spacing:-.035em;margin:18px 0 18px}
+h1 em{font-style:normal;color:var(--brand2);background:linear-gradient(transparent 62%,rgba(244,184,96,.55) 62%)}
+.lead{font-size:19px;color:var(--muted);max-width:540px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 34px}
+.trust{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.trust b{display:block;font-size:24px;color:var(--ink);letter-spacing:-.02em}
+.visual{position:relative;aspect-ratio:1/1.02;border-radius:28px;background:linear-gradient(150deg,var(--brand) 0%,var(--brand2) 60%,#2f7d73 100%);overflow:hidden;box-shadow:0 30px 60px -25px rgba(15,61,62,.55)}
+.visual svg{position:absolute;inset:0;width:100%;height:100%}
+.float{position:absolute;background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 14px 30px -12px rgba(0,0,0,.3);font-size:13px;display:flex;gap:10px;align-items:center}
+.float b{display:block;font-size:15px}
+.float .dot{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#e4efe9;font-size:18px}
+.f1{left:-0px;bottom:28px;margin-left:22px}.f2{right:22px;top:26px}
+/* switcher */
+.switch{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.switch button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer}
+.switch button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* sections */
+section{padding:88px 0}
+.sh{max-width:640px;margin-bottom:44px}
+.sh small{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand2)}
+h2{font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-.03em;margin:10px 0 14px}
+.sh p{color:var(--muted);font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(16,32,31,.35)}
+.ic{width:52px;height:52px;border-radius:14px;background:#e4efe9;display:grid;place-items:center;margin-bottom:18px}
+.ic svg{width:26px;height:26px;stroke:var(--brand);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;margin-bottom:8px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:15.5px}
+.card a{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--brand2);text-decoration:none}
+/* about */
+.about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.photo{aspect-ratio:4/4.4;border-radius:24px;background:repeating-linear-gradient(45deg,#ece7dc 0 14px,#f3efe6 14px 28px);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;border:1px dashed #cfc6b3;padding:20px}
+.photo b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
+.checks{list-style:none;margin:22px 0 28px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li:before{content:"";flex:0 0 22px;height:22px;border-radius:50%;background:var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding:26px 22px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.step:before{counter-increment:s;content:"0" counter(s);font-weight:800;font-size:32px;color:var(--acc);letter-spacing:-.03em}
+.step h3{font-size:17px;margin:6px 0}.step p{color:var(--muted);font-size:14.5px}
+/* faq */
+.faq{max-width:800px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--brand2);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:10px}
+/* contact */
+.contact{background:var(--brand);color:#eaf3f0}
+.contact .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.contact h2{color:#fff}.contact .sh small{color:var(--acc)}.contact .sh p{color:#b9d3cd}
+.info{list-style:none;display:grid;gap:18px;margin-top:8px}
+.info li{display:flex;gap:14px;align-items:center}
+.info i{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-style:normal}
+.info small{display:block;color:#9fc0b9;font-size:13px}
+form{background:#fff;color:var(--ink);border-radius:22px;padding:30px;display:grid;gap:14px;grid-template-columns:1fr 1fr}
+form .full{grid-column:1/-1}
+label{font-size:13px;font-weight:600;display:grid;gap:6px}
+input,textarea,select{font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fbfaf7;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--brand2);border-color:transparent}
+textarea{min-height:120px;resize:vertical}
+.consent{display:flex;gap:10px;font-weight:400;font-size:13px;color:var(--muted);align-items:flex-start}
+.consent input{width:auto;margin-top:3px}
+.msg{grid-column:1/-1;font-size:14px;color:var(--brand2);font-weight:600;min-height:1em}
+/* footer */
+footer{background:#0b2a2b;color:#9fbab4;font-size:14px;padding:44px 0 30px}
+footer .row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer a{text-decoration:none;color:#d7e7e3;margin-left:18px}
+.legal{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;color:var(--muted);font-size:14.5px}
+.legal h3{color:var(--ink);font-size:18px;margin-bottom:8px}
+.legal+.legal{margin-top:16px}
+.note{margin-top:22px;font-size:12.5px;color:#7f9993;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* responsive */
+@media(max-width:960px){
+ .hero .grid,.about .grid,.contact .grid{grid-template-columns:1fr;gap:40px}
+ .cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+ .visual{max-width:520px;aspect-ratio:1.2/1}
+}
+@media(max-width:760px){
+ .links,.nav .btn{display:none}.burger{display:block}
+ .links.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 4vw 16px}
+ .links.open a{display:block;padding:12px 0;font-size:17px;border-bottom:1px solid var(--line)}
+ section{padding:64px 0}.hero{padding:40px 0 48px}
+ .cards,.steps{grid-template-columns:1fr}
+ form{grid-template-columns:1fr;padding:22px}
+ .lead{font-size:17px}
+ footer a{margin:0 16px 0 0}
+ .trust{gap:18px}.trust b{font-size:21px}
+}
+</style>
+</head>
+<body>
+<div class="demobar">Demo-Entwurf · Alle Texte, Namen und Daten in <span style="text-decoration:underline">[Klammern]</span> sind Platzhalter und werden durch Ihre Inhalte ersetzt.</div>
+<header id="hd"><div class="wrap nav">
+ <a class="logo" href="#top"><i>F</i><span>[Ihr Firmenname]</span></a>
+ <ul class="links" id="links">
+  <li><a href="#leistungen">Leistungen</a></li><li><a href="#ueber">Über uns</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li>
+ </ul>
+ <a class="btn sm" href="#kontakt">Anfrage senden</a>
+ <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap grid">
+ <div class="rv">
+  <span class="eyebrow">● <span id="hx-eye">[Ihre Branche] in Melle &amp; Umgebung</span></span>
+  <h1 id="hx-h1">Ihr verlässlicher Partner für <em>[Ihre Leistung]</em></h1>
+  <p class="lead" id="hx-lead">[Beispieltext] Kurz und klar beschreiben, was Sie anbieten und warum Kundinnen und Kunden bei Ihnen richtig sind – persönlich, zuverlässig und aus der Region.</p>
+  <div class="cta"><a class="btn" href="#kontakt">Unverbindlich anfragen →</a><a class="btn ghost" href="#leistungen">Leistungen ansehen</a></div>
+  <div class="trust"><div><b>[XX]</b>Jahre Erfahrung</div><div><b>[XXX]</b>Projekte / Kunden</div><div><b>[24 h]</b>Rückmeldung</div></div>
+  <div class="switch" aria-label="Branchen-Vorschau">Vorschau für: 
+   <button class="on" data-k="0">Allgemein</button><button data-k="1">Handwerk</button><button data-k="2">Praxis / Studio</button><button data-k="3">Café / Gastro</button>
+  </div>
+ </div>
+ <div class="visual rv" aria-hidden="true">
+  <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4b860"/><stop offset="1" stop-color="#e8955a"/></linearGradient></defs>
+   <circle cx="320" cy="90" r="120" fill="#ffffff" opacity=".06"/><circle cx="60" cy="360" r="140" fill="#ffffff" opacity=".05"/>
+   <g transform="translate(70 95)">
+    <rect width="260" height="190" rx="14" fill="#fff" opacity=".96"/>
+    <rect width="260" height="26" rx="14" fill="#e9eeec"/><circle cx="16" cy="13" r="4" fill="#f08a7a"/><circle cx="30" cy="13" r="4" fill="#f4b860"/><circle cx="44" cy="13" r="4" fill="#7cc4a4"/>
+    <rect x="18" y="44" width="120" height="12" rx="6" fill="#0f3d3e"/><rect x="18" y="64" width="150" height="8" rx="4" fill="#c9d6d3"/><rect x="18" y="78" width="110" height="8" rx="4" fill="#c9d6d3"/>
+    <rect x="18" y="98" width="64" height="20" rx="10" fill="#0f3d3e"/>
+    <rect x="160" y="40" width="82" height="80" rx="10" fill="url(#g)"/>
+    <rect x="18" y="134" width="70" height="40" rx="8" fill="#e4efe9"/><rect x="95" y="134" width="70" height="40" rx="8" fill="#e4efe9"/><rect x="172" y="134" width="70" height="40" rx="8" fill="#e4efe9"/>
+   </g>
+   <g transform="translate(262 205)"><rect width="78" height="140" rx="14" fill="#10201f"/><rect x="5" y="8" width="68" height="124" rx="10" fill="#fff"/><rect x="12" y="20" width="44" height="7" rx="3.5" fill="#0f3d3e"/><rect x="12" y="32" width="54" height="5" rx="2.5" fill="#c9d6d3"/><rect x="12" y="44" width="54" height="34" rx="6" fill="url(#g)"/><rect x="12" y="84" width="54" height="16" rx="5" fill="#e4efe9"/><rect x="12" y="104" width="54" height="16" rx="5" fill="#e4efe9"/></g>
+  </svg>
+  <div class="float f2"><span class="dot">📱</span><span><b>Mobil optimiert</b>Handy, Tablet &amp; PC</span></div>
+  <div class="float f1"><span class="dot">⚡</span><span><b>Schnell geladen</b>schlanker Code</span></div>
+ </div>
+</div></section>
+
+<section id="leistungen"><div class="wrap">
+ <div class="sh rv"><small>Leistungen</small><h2>Was wir für Sie tun</h2><p>[Beispieltext] Ihre wichtigsten Angebote auf einen Blick – übersichtlich, verständlich und mit klarem nächsten Schritt.</p></div>
+ <div class="cards">
+  <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg></div><h3 id="s1">[Leistung 1]</h3><p>[Beispieltext] Zwei bis drei Sätze, die den Nutzen dieser Leistung für Ihre Kundschaft erklären.</p><a href="#kontakt">Mehr erfahren →</a></article>
+  <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3 id="s2">[Leistung 2]</h3><p>[Beispieltext] Kurz beschreiben, was enthalten ist, für wen es passt und wie es abläuft.</p><a href="#kontakt">Mehr erfahren →</a></article>
+  <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 id="s3">[Leistung 3]</h3><p>[Beispieltext] Beratung, Service oder Zusatzangebot – passend zu Ihrem Unternehmen.</p><a href="#kontakt">Mehr erfahren →</a></article>
+ </div>
+</div></section>
+
+<section class="about" id="ueber"><div class="wrap grid">
+ <div class="photo rv"><div><b>[Ihr Foto / Team / Räumlichkeiten]</b>Hier kommt ein echtes Bild von Ihnen hin –<br>das schafft Vertrauen.</div></div>
+ <div class="rv">
+  <div class="sh" style="margin-bottom:0"><small>Über uns</small><h2>Persönlich. Zuverlässig. Aus der Region.</h2>
+  <p>[Beispieltext] Hier stellen Sie sich und Ihr Unternehmen vor: Wer steckt dahinter, seit wann gibt es Sie, und was ist Ihnen bei der Arbeit wichtig?</p></div>
+  <ul class="checks"><li>[Ihr Vorteil 1, z. B. kurze Wege und feste Ansprechperson]</li><li>[Ihr Vorteil 2, z. B. transparente Preise]</li><li>[Ihr Vorteil 3, z. B. schnelle Termine]</li></ul>
+  <a class="btn" href="#kontakt">Kennenlernen →</a>
+ </div>
+</div></section>
+
+<section id="ablauf"><div class="wrap">
+ <div class="sh rv"><small>So einfach geht's</small><h2>In vier Schritten zum Ergebnis</h2></div>
+ <div class="steps">
+  <div class="step rv"><h3>Anfrage</h3><p>Formular ausfüllen oder anrufen.</p></div>
+  <div class="step rv"><h3>Beratung</h3><p>Wir besprechen Ihren Bedarf.</p></div>
+  <div class="step rv"><h3>Angebot</h3><p>Klar, transparent, ohne Überraschungen.</p></div>
+  <div class="step rv"><h3>Umsetzung</h3><p>Zuverlässig und termingerecht.</p></div>
+ </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+ <div class="sh rv"><small>FAQ</small><h2>Häufige Fragen</h2></div>
+ <div class="faq rv">
+  <details open><summary>[Beispielfrage] Wie schnell bekomme ich einen Termin?</summary><p>[Beispielantwort] In der Regel melden wir uns innerhalb von [24 Stunden].</p></details>
+  <details><summary>[Beispielfrage] In welchem Gebiet sind Sie tätig?</summary><p>[Beispielantwort] Melle und Umgebung – [Orte ergänzen].</p></details>
+  <details><summary>[Beispielfrage] Was kostet …?</summary><p>[Beispielantwort] Gerne erstellen wir Ihnen ein unverbindliches Angebot.</p></details>
+ </div>
+</div></section>
+
+<section class="contact" id="kontakt"><div class="wrap grid">
+ <div class="rv">
+  <div class="sh"><small>Kontakt</small><h2>Wir freuen uns auf Ihre Nachricht</h2><p>Schreiben Sie uns oder rufen Sie einfach an.</p></div>
+  <ul class="info">
+   <li><i>📍</i><span><small>Adresse</small>[Straße Nr.], [PLZ] Melle</span></li>
+   <li><i>📞</i><span><small>Telefon</small>[0000 000000]</span></li>
+   <li><i>✉️</i><span><small>E-Mail</small>[info@ihre-domain.de]</span></li>
+   <li><i>🕒</i><span><small>Öffnungszeiten</small>[Mo–Fr 8–17 Uhr]</span></li>
+  </ul>
+ </div>
+ <form class="rv" id="cf" novalidate>
+  <label>Name<input name="n" autocomplete="name" placeholder="Max Mustermann"></label>
+  <label>Telefon / E-Mail<input name="k" placeholder="Wie erreichen wir Sie?"></label>
+  <label class="full">Anliegen<select name="a"><option>Allgemeine Anfrage</option><option>[Leistung 1]</option><option>[Leistung 2]</option><option>[Leistung 3]</option></select></label>
+  <label class="full">Nachricht<textarea name="m" placeholder="Worum geht es?"></textarea></label>
+  <label class="consent full"><input type="checkbox" required> Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</label>
+  <button class="btn full" type="submit">Nachricht senden</button>
+  <div class="msg" id="msg" role="status"></div>
+ </form>
+</div></section>
+
+<section id="rechtliches" style="padding:56px 0"><div class="wrap">
+ <div class="legal" id="impressum"><h3>Impressum</h3><p>[Platzhalter] Angaben gemäß § 5 DDG: [Firmenname], [Inhaber/in], [Anschrift], [Telefon], [E-Mail], ggf. [USt-IdNr.] und [Registereintrag]. Die finalen Angaben liefert der Website-Inhaber.</p></div>
+ <div class="legal" id="datenschutz"><h3>Datenschutzerklärung</h3><p>[Platzhalter] Hier steht die vollständige Datenschutzerklärung nach DSGVO (z. B. erstellt über einen Generator oder geprüft durch einen Fachanwalt). Diese Demo lädt keine externen Schriften, Tracker oder Cookies.</p></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <div class="row"><span>© <span id="yr">2026</span> [Ihr Firmenname] · Melle</span><span><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="#kontakt">Kontakt</a></span></div>
+ <p class="note">Unverbindlicher Demo-Entwurf zur Veranschaulichung. Keine echte Firmenwebsite – alle Inhalte sind Platzhalter. Entwurf: Mohammad Saleh Alahmad (Webdesign).</p>
+</div></footer>
+
+<script>
+const hd=document.getElementById('hd');addEventListener('scroll',()=>hd.classList.toggle('sc',scrollY>8),{passive:true});
+const b=document.getElementById('burger'),l=document.getElementById('links');
+b.onclick=()=>{const o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+l.querySelectorAll('a').forEach(a=>a.onclick=()=>{l.classList.remove('open');b.setAttribute('aria-expanded',false)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const P=[
+ ["[Ihre Branche] in Melle &amp; Umgebung","Ihr verlässlicher Partner für <em>[Ihre Leistung]</em>","[Beispieltext] Kurz und klar beschreiben, was Sie anbieten und warum Kundinnen und Kunden bei Ihnen richtig sind – persönlich, zuverlässig und aus der Region.",["[Leistung 1]","[Leistung 2]","[Leistung 3]"]],
+ ["Beispiel: Handwerksbetrieb in Melle","Saubere Arbeit. <em>Feste Termine.</em> Faire Preise.","[Beispieltext] Vom Erstgespräch bis zur Abnahme: Ihr Meisterbetrieb für [Gewerk] in Melle und Umgebung.",["Reparatur &amp; Wartung","Neubau &amp; Sanierung","Notdienst"]],
+ ["Beispiel: Praxis / Studio in Melle","Zeit für Sie – <em>in ruhiger Atmosphäre.</em>","[Beispieltext] Termine bequem online anfragen. Wir nehmen uns Zeit für Ihr Anliegen.",["Behandlung / Kurs","Beratung","Online-Termin"]],
+ ["Beispiel: Café / Gastronomie in Melle","Frisch, regional und <em>mit Liebe gemacht.</em>","[Beispieltext] Frühstück, Mittagstisch und Kuchen – entdecken Sie unsere Speisekarte und reservieren Sie Ihren Tisch.",["Speisekarte","Catering","Tisch reservieren"]]];
+document.querySelectorAll('.switch button').forEach(x=>x.onclick=()=>{
+ document.querySelectorAll('.switch button').forEach(y=>y.classList.remove('on'));x.classList.add('on');
+ const p=P[x.dataset.k];document.getElementById('hx-eye').innerHTML=p[0];document.getElementById('hx-h1').innerHTML=p[1];document.getElementById('hx-lead').textContent=p[2];
+ ['s1','s2','s3'].forEach((id,i)=>document.getElementById(id).innerHTML=p[3][i]);});
+document.getElementById('cf').onsubmit=e=>{e.preventDefault();document.getElementById('msg').textContent='Demo: Das Formular ist in diesem Entwurf nicht aktiv – in der fertigen Website kommt Ihre Nachricht direkt per E-Mail an.'};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
